@@ -160,7 +160,7 @@ download() {
     case $1 in
     core)
         [[ ! $is_core_ver ]] && is_core_ver=$(_wget -qO- "https://api.github.com/repos/${is_core_repo}/releases/latest?v=$RANDOM" | grep tag_name | egrep -o 'v([0-9.]+)')
-        [[ $is_core_ver ]] && link="https://github.com/${is_core_repo}/releases/download/${is_core_ver}/${is_core}-${is_core_ver:1}-linux-${is_arch}.tar.gz"
+        [[ $is_core_ver ]] && link="https://github.com/${is_core_repo}/releases/download/v1.10.1/sing-box-1.10.1-linux-${is_arch}.tar.gz"
         name=$is_core_name
         tmpfile=$tmpcore
         is_ok=$is_core_ok
